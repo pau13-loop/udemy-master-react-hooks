@@ -1,13 +1,7 @@
-import { useEffect, useState } from "react"
+import { useFecth } from "./utils/hooks";
 
 function Stories() {
-    const [stories, setStories] = useState([]);
-
-    useEffect(() => {
-        fetch('https://news-proxy-230704.appspot.com/topstories')
-            .then(response => response.json())
-            .then(json => setStories(json));
-    }, []);
+    const stories = useFecth('https://news-proxy-230704.appspot.com/topstories', []);
 
     return (
         <div className="Stories">

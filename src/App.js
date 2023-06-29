@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import Joke from './joke';
-import Stories from './stories';
+import Joke from './Joke';
+import Stories from './Stories';
 
 function App() {
   const [userQuery, setUserQuery] = useState('');
