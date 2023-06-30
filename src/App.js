@@ -6,6 +6,7 @@ import Gallery from './Gallery';
 
 function App() {
   const [userQuery, setUserQuery] = useState('');
+  const [showGallery, setShowGallery] = useState(true);
 
   const searchQuery = () => {
     window.open(`https://google.com/search?q=${userQuery}`, '_blank');
@@ -21,6 +22,10 @@ function App() {
     console.log('userQuery: ', userQuery);
 
     setUserQuery(event.target.value);
+  }
+
+  const toggleShowGallery = () => {
+    setShowGallery(!showGallery);
   }
 
   return (
@@ -44,7 +49,12 @@ function App() {
       <hr />
       <Tasks />
       <hr />
-      <Gallery />
+      <div>
+        {
+          showGallery && <Gallery />
+        }
+        <button onClick={toggleShowGallery}>{showGallery ? 'Hide' : 'Show'} Gallery</button>
+      </div>
       <hr />
       <Stories />
     </div>
