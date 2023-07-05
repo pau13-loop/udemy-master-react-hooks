@@ -20,8 +20,6 @@ function App() {
   }
 
   const updateUserQuery = event => {
-    console.log('userQuery: ', userQuery);
-
     setUserQuery(event.target.value);
   }
 

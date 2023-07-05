@@ -25,9 +25,6 @@ function Matrix() {
         setIncrement(increment < minimumIncrement ? minimumIncrement : increment);
     }
 
-    console.log('delay', delay);
-    console.log('increment', increment);
-
     return (
         <div className='Matrix'>
             <img
